@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/util
+       http://www.springframework.org/schema/util/spring-util.xsd">
+
+
+    <bean id="lesson1" class="com.learning.spring6.iocxml.school.Lesson">
+        <property name="name" value="CHINESE"/>
+        <property name="teacher" ref="teacherZhang"/>
+    </bean>
+
+    <bean id="lesson2" class="com.learning.spring6.iocxml.school.Lesson">
+        <property name="name" value="MATH"/>
+        <property name="teacher" ref="teacherLiu"/>
+    </bean>
+
+    <bean id="teacherZhang" class="com.learning.spring6.iocxml.school.Teacher">
+        <property name="name" value="MR ZHANG"/>
+        <property name="age" value="35"/>
+    </bean>
+
+    <bean id="teacherLiu" class="com.learning.spring6.iocxml.school.Teacher">
+        <property name="name" value="MR LIU"/>
+        <property name="age" value="40"/>
+    </bean>
+
+    <bean id="student1" class="com.learning.spring6.iocxml.school.Student">
+        <property name="name" value="tom"/>
+        <property name="age" value="18"/>
+        <property name="lessonList" ref="lessonList"/>
+        <property name="teacherMap" ref="teacherMap"/>
+    </bean>
+
+
+    <util:list id="lessonList">
+        <ref bean="lesson1"/>
+        <ref bean="lesson2"/>
+    </util:list>
+
+    <util:map id="teacherMap">
+        <entry>
+            <key>
+                <value>MATH</value>
+            </key>
+            <ref bean="teacherZhang"/>
+        </entry>
+        <entry>
+            <key>
+                <value>CHINESE</value>
+            </key>
+            <ref bean="teacherZhang"/>
+        </entry>
+    </util:map>
+
+    <!--P名称空间注入-->
+    <bean id="student_p" class="com.learning.spring6.iocxml.school.Student"
+    p:name="Jerry" p:lessonList-ref="lessonList" p:teacherMap-ref="teacherMap">
+
+    </bean>
+
+</beans>

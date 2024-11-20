@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--1. 引用外部Bean-->
+    <bean name="dept1" class="com.learning.spring6.iocxml.ditest.Dept">
+        <property name="name" value="Finance"> </property>
+    </bean>
+
+    <bean id="emp1" class="com.learning.spring6.iocxml.ditest.Emp">
+        <!--普通属性注入-->
+        <property name="name" value="jack"/>
+        <property name="age" value="99"/>
+        <!--对象类型注入-->
+        <property name="dept" ref="dept1"/>
+    </bean>
+
+    <!--2. 内部Bean-->
+
+    <bean id="emp2" class="com.learning.spring6.iocxml.ditest.Emp">
+        <!--普通属性注入-->
+        <property name="name" value="jack"/>
+        <property name="age" value="99"/>
+        <!--内部Bean-->
+        <property name="dept">
+            <bean class="com.learning.spring6.iocxml.ditest.Dept">
+                <property name="name" value="Tech"/>
+            </bean>
+        </property>
+    </bean>
+
+
+
+    <!--3. 级联属性赋值-->
+    <bean id="dept3" class="com.learning.spring6.iocxml.ditest.Dept">
+        <property name="name" value="On Bench"/>
+    </bean>
+
+    <bean id="emp3" class="com.learning.spring6.iocxml.ditest.Emp">
+        <!--普通属性注入-->
+        <property name="name" value="jack"/>
+        <property name="age" value="99"/>
+        <property name="dept" ref="dept3"/>
+        <!--级连赋值-->
+        <property name="dept.name" value="Human Resource"/>
+    </bean>
+
+
+    <!--数组类型属性-->
+    <bean id="empA" class="com.learning.spring6.iocxml.ditest.Emp">
+        <property name="name" value="tom"/>
+        <property name="age" value="19"/>
+        <property name="dept" ref="dept1"/>
+        <!--数组类型-->
+        <property name="hobbies">
+            <array>
+                <value>Guitar</value>
+                <value>Piano</value>
+                <value>笛子</value>
+            </array>
+        </property>
+    </bean>
+
+    <!--List集合注入-->
+    <bean id="deptL" class="com.learning.spring6.iocxml.ditest.Dept">
+        <property name="name" value="Finance"/>
+        <property name="empList">
+            <list>
+                <ref bean="emp1"/>
+                <ref bean="emp2"/>
+                <ref bean="empA"/>
+            </list>
+        </property>
+    </bean>
+
+</beans>

@@ -1,0 +1,47 @@
+<!--<?xml version="1.0" encoding="UTF-8"?>-->
+<!--<beans xmlns="http://www.springframework.org/schema/beans"-->
+<!--       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"-->
+<!--       xmlns:util="http://www.springframework.org/schema/util"-->
+<!--       xsi:schemaLocation="http://www.springframework.org/schema/beans-->
+<!--       http://www.springframework.org/schema/beans/spring-beans.xsd-->
+<!--       http://www.springframework.org/schema/util-->
+<!--       http://www.springframework.org/schema/beans/spring-util.xsd">-->
+
+<!--    &lt;!&ndash;集合类型注入&ndash;&gt;-->
+<!--    <bean id="math" class="com.learning.spring6.iocxml.school.Teacher">-->
+<!--        <property name="name" value="liu"/>-->
+<!--        <property name="age" value="46"/>-->
+<!--    </bean>-->
+<!--    <bean id="chinese" class="com.learning.spring6.iocxml.school.Teacher">-->
+<!--        <property name="name" value="wang"/>-->
+<!--        <property name="age" value="70"/>-->
+<!--    </bean>-->
+<!--    <bean id="english" class="com.learning.spring6.iocxml.school.Teacher">-->
+<!--        <property name="name" value="Zhang"/>-->
+<!--        <property name="age" value="30"/>-->
+<!--    </bean>-->
+
+<!--    <bean id="fei" class="com.learning.spring6.iocxml.school.Student">-->
+<!--        <property name="name" value="fei"/>-->
+<!--        <property name="age" value="19"/>-->
+<!--        <property name="map" ref=""-->
+<!--            <map>-->
+<!--                <entry>-->
+<!--                    <key>-->
+<!--                        <value>英语</value>-->
+<!--                    </key>-->
+<!--                    <ref bean="english"/>-->
+<!--                </entry>-->
+<!--                <entry value-ref="chinese">-->
+<!--                    <key>-->
+<!--                        <value>语文</value>-->
+<!--                    </key>-->
+<!--                </entry>-->
+<!--                <entry key="数学" value-ref="math"/>-->
+<!--            </map>-->
+<!--        </>-->
+<!--    </bean>-->
+
+
+<!--    <util:list id="le"-->
+<!--</beans>-->
