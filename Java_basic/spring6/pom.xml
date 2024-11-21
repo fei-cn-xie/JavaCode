@@ -15,6 +15,10 @@
         <module>diy-spring</module>
         <module>spring6-aop</module>
         <module>spring6-junit</module>
+        <module>spring6-tx</module>
+        <module>spring-resource</module>
+        <module>spring6-i18n</module>
+        <module>spring-validator</module>
     </modules>
 
     <dependencies>
@@ -27,11 +31,18 @@
         </dependency>
 
         <!--junit-->
-<!--        <dependency>-->
-<!--            <groupId>org.junit.jupiter</groupId>-->
-<!--            <artifactId>junit-jupiter-api</artifactId>-->
-<!--            <version>5.3.1</version>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>5.9.3</version>
+        </dependency>
+
+        <!--Spring使用Junit需要的配置 SpringJunitConfig-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>6.0.2</version>
+        </dependency>
 
         <!--log4j2-->
         <dependency>
