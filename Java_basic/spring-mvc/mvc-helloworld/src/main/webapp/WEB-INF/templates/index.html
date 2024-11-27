@@ -8,6 +8,18 @@
 
 <h1>首页</h1>
 <a th:href="@{/target}">访问页面target.html</a>
+<p></p>
+<a th:href="@{/testParam(username='zs', password='123')}">通过控制器形式参数获取请求参数demo</a>
+<p>
+
+</p>
+
+<form th:action="@{/testPOJO}" method="post">
+    Username: <input type="text" name="username"><br>
+    Password: <input type="text" name="username"><br>
+    <input type="submit" value="Submit POJO">
+</form>
+
 
 </body>
 </html>

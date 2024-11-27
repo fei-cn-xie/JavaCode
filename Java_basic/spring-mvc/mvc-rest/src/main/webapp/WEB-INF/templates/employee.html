@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <table border="2" cellpadding="0" cellspacing="0" style="text-align: center" >
+    <tr>
+      <th colspan="5">Employee Info</th>
+    </tr>
+    <tr>
+      <th>id</th>
+      <th>name</th>
+      <th>email</th>
+      <th>gender</th>
+      <th>options</th>
+    </tr>
+    <tr th:each="employee : ${employeeList}">
+      <td th:text="${employee.id}"></td>
+      <td th:text="${employee.name}"></td>
+      <td th:text="${employee.email}"></td>
+      <td th:text="${employee.gender}"></td>
+      <td>
+        <a th:href="@{/employee/}+${employee.id}">Delete</a>
+        <a th:href="@{/employee/}+${employee.id}">UPDATE</a>
+      </td>
+    </tr>
+
+    <form method="post">
+      <input type="hidden" name="_method" value="delete"
+    </form>
+
+
+  </table>
+
+</body>
+</html>

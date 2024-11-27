@@ -11,6 +11,8 @@
     <modules>
         <module>mvc-helloworld</module>
         <module>mvc-annotation</module>
+        <module>mvc-domain_obj</module>
+        <module>mvc-rest</module>
     </modules>
 
     <properties>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<a th:href="@{/user}" methods="get"> get查询所有用户</a>
+<p></p>
+<a th:href="@{/user/tom}" methods="get">get查询单个用户</a>
+
+<form th:action="@{/user}" method="post">
+  Username: <input type="text" name="username"><br>
+  Age: <input type="text" name="age"><br>
+  <input type="submit" value="POST添加用户">
+</form>
+
+<form th:action="@{/user}" method="post">
+    <input type="hidden" name="_method" value="put">
+    Username: <input type="text" name="username"><br>
+    Age: <input type="text" name="age"><br>
+    <input type="submit" value="PUT更新用户">
+</form>
+
+<form th:action="@{/user}" method="post">
+    <input type="hidden" name="_method" value="delete">
+    Username: <input type="text" name="username"><br>
+    <input type="submit" value="delete删除用户">
+</form>
+
+<a th:href="@{/user/tom}" methods="delete">delete删除用户</a>
+
+<p>====================</p>
+<p></p>
+<a th:text="${user}">服务器返回数据</a>
+
+
+</body>
+</html>
